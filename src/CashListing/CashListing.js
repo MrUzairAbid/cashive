@@ -77,7 +77,7 @@ const CashListing = (props) => {
                         </Button>
                     </DialogActions>
                 </Dialog>
-             </TableBody>
+            </TableBody>
     )
     
     return (
