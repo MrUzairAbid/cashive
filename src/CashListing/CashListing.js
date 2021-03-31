@@ -79,9 +79,6 @@ const CashListing = (props) => {
                 </Dialog>
              </TableBody>
     )
-
-    
-    
     
     return (
         <TableContainer component={Paper} >
