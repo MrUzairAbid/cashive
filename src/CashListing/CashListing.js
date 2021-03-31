@@ -61,25 +61,20 @@ const CashListing = (props) => {
                             </TableRow>
                     ); 
                 })}
-                <Dialog
-                    fullScreen={fullScreen}
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="responsive-dialog-title"
-                >
+                <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
                     <DialogTitle id="responsive-dialog-title">{"Delete expense confirmation"}</DialogTitle>
                     <DialogContent>
-                    <DialogContentText>
-                        Are you sure you want to delete this expense?
-                    </DialogContentText>
+                        <DialogContentText>
+                            Are you sure you want to delete this expense?
+                        </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                    <Button autoFocus onClick={removeEntry} color="primary">
-                        Delete
-                    </Button>
-                    <Button onClick={handleClose} color="primary" autoFocus>
-                        Cancel
-                    </Button>
+                        <Button autoFocus onClick={removeEntry} color="primary">
+                            Delete
+                        </Button>
+                        <Button onClick={handleClose} color="primary" autoFocus>
+                            Cancel
+                        </Button>
                     </DialogActions>
                 </Dialog>
              </TableBody>
