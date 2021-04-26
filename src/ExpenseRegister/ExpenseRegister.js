@@ -4,7 +4,7 @@ import CashListing from '../CashListing/CashListing';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import axios from 'axios';
+import ExpenseAPI from '../api/ExpenseAPI';
 
 
 class ExpenseRegister extends Component {
@@ -19,23 +19,23 @@ class ExpenseRegister extends Component {
   }
 
   addCashEntryToState = async (cashEntry) => {
-    const response = await axios.post(
-      'http://localhost:8080/expense/save', cashEntry,{}
+    const response = await ExpenseAPI.post(
+      '/expense/save', cashEntry,{}
     );
     this.refreshRegister();
   }
 
   removeCashEntryFromState = async (id) => {
-    const response = await axios.delete(
-      'http://localhost:8080/expense/delete/' + id,{}
+    const response = await ExpenseAPI.delete(
+      '/expense/delete/' + id,{}
     );
     this.refreshRegister();
   }
 
   async refreshRegister()
   {
-    const response = await axios.get(
-      'http://localhost:8080/expense/all',{}
+    const response = await ExpenseAPI.get(
+      '/expense/all',{}
     );
     this.setState({cashEntries: response.data});
   }

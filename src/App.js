@@ -3,10 +3,7 @@ import { Component } from 'react';
 import ExpenseRegister from './ExpenseRegister/ExpenseRegister';
 
 
-
-
 class App extends Component {
-
 
   render() {
     return (
@@ -17,7 +14,6 @@ class App extends Component {
         </div>    
     );
   }
-
 }
 
 export default App;
