@@ -48,7 +48,9 @@ const ExpenseRegister = (props) => {
         if(validateForm())
         {
             var formattedAmount = amount.replace(',','').replace("Rs. ","");
-            var formattedDate = date.replaceAll('-', '/');
+            var moment = require('moment');
+            var formattedDate = moment(date, 'YYYY-MM-DD').format('DD/MM/YYYY');
+            console.log(formattedDate);
             let cashEntry = new CashEntry(description, parseFloat(formattedAmount), formattedDate, type.title);
             resetForm();
             props.add(cashEntry);
